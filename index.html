@@ -3,16 +3,16 @@
 <head>
 	<title>Yay Math Log</title>
 	<style>
+		p {
+			display: inline-block;
+			width: 90px;
+			text-align: center;
+		}
 		label {
 			/* To make sure that all labels have the same size and are properly aligned */
 			display: inline-block;
 			width: 90px;
-			text-align: right;
-		}
-		button {
-			/* This extra margin represent roughly the same space as the space
-			between the labels and their text fields */
-			margin-left: .5em;
+			text-align: center;
 		}
 	</style>
 </head>
@@ -30,7 +30,7 @@
 		<input type="text" id="c" name="c">
 	</div>
 	<div class="button">
-		<button type="submit" onclick="go();">Calculate</button>
+		<button onclick="go();">Calculate</button>
 	</div>
 	<p id="output"></p>
 	<script>
@@ -39,9 +39,8 @@
 			var b = document.getElementById("b").value;
 			var c = document.getElementById("c").value;
 			a = Number(a); b = Number(b); c = Number(c);
-			console.log(a + ", " + b + ", " + c);
-			const ans1 = ((-b + Math.sqrt(b * b - 4 * a * c)) / 2 * a);
-			const ans2 = ((-b - Math.sqrt(b * b - 4 * a * c)) / 2 * a);
+			const ans1 = (-b + Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
+			const ans2 = (-b - Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
 			document.getElementById("output").innerHTML = ans1 + " or " + ans2;
 		}
 	</script>
