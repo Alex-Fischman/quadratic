@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Yay Maaath</title>
+	<title>Yay Math</title>
 	<style>
 		label {
 			/* To make sure that all labels have the same size and are properly aligned */
@@ -38,6 +38,7 @@
 			var a = document.getElementById("a").value;
 			var b = document.getElementById("b").value;
 			var c = document.getElementById("c").value;
+			a = Number(a); b = Number(b); c = Number(c);
 			const ans1 = ((-b + Math.sqrt(b * b - 4 * a * c)) / 2 * a);
 			const ans2 = ((-b - Math.sqrt(b * b - 4 * a * c)) / 2 * a);
 			document.getElementById("output").innerHTML = ans1 + " or " + ans2;
