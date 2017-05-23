@@ -29,7 +29,7 @@
 	</style>
 </head>
 <body>
-	<form action="/quadratic" method="post">
+	<form action="/quadratic" method="get">
 		<div>
 			<label for="a">a =</label>
 			<input type="text" id="a" name="a">
@@ -46,6 +46,12 @@
 			<button type="submit">Calculate</button>
 		</div>
 	</form>
-	<p></p>
+	<?php
+  		// The global $_POST variable allows you to access the data sent with the POST method by name
+  		// To access the data sent with the GET method, you can use $_GET
+  		$say = htmlspecialchars($_POST['say']);
+  		$to  = htmlspecialchars($_POST['to']);
+  		echo  $say, ' ', $to;
+	?>
 </body>
 </html>
